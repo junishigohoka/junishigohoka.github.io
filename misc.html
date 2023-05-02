@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Misc</title>
+
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link rel="shortcut icon" href="images/favicon.ico" />
+<script type="text/javascript">
+  $(document).ready(function() {
+    var customTitle = "Jun Ishigohoka"; // change this to your desired custom title
+    var pageTitle = $('h1:first').text(); // get the text content of the first h1 element on the page
+    document.title = customTitle + " | " + pageTitle;
+  });
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Jun Ishigohoka</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about_me.html">About me</a>
+</li>
+<li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Misc
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="misc.html">Misc</a>
+    </li>
+    <li>
+      <a href="misc.html#Favourite_papers">- Favourite papers</a>
+    </li>
+    <li>
+      <a href="misc.html#Favourite_books">- Favourite books</a>
+    </li>
+    <li>
+      <a href="misc.html#Favourite_music">- Favourite music</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Misc</h1>
+
+</div>
+
+
+<div id="favourite-papers" class="section level2">
+<h2>Favourite papers</h2>
+<p>I believe that sharing favourite papers including those outside your
+projects helps communicate your broad interests. Here I list a subset of
+papers which influenced the way I think.</p>
+<div id="population-genetics" class="section level3">
+<h3><u>Population genetics</u></h3>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 1.35; ">
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">1.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Lawson, D.J., van Dorp, L., and Falush, D. (2018). A tutorial on how not to over-interpret STRUCTURE and ADMIXTURE bar plots. Nat Commun <i>9</i>, 3258. <a href="https://doi.org/10.1038/s41467-018-05257-7">10.1038/s41467-018-05257-7</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1038%2Fs41467-018-05257-7&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A%20tutorial%20on%20how%20not%20to%20over-interpret%20STRUCTURE%20and%20ADMIXTURE%20bar%20plots&amp;rft.jtitle=Nature%20Communications&amp;rft.stitle=Nat%20Commun&amp;rft.volume=9&amp;rft.issue=1&amp;rft.aufirst=Daniel%20J.&amp;rft.aulast=Lawson&amp;rft.au=Daniel%20J.%20Lawson&amp;rft.au=Lucy%20van%20Dorp&amp;rft.au=Daniel%20Falush&amp;rft.date=2018-08-14&amp;rft.pages=3258&amp;rft.issn=2041-1723&amp;rft.language=en"></span>
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">2.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Booker, T.R., Yeaman, S., and Whitlock, M.C. (2021). Global adaptation complicates the interpretation of genome scans for local adaptation. Evolution Letters <i>5</i>, 4–15. <a href="https://doi.org/10.1002/evl3.208">https://doi.org/10.1002/evl3.208</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2Fhttps%3A%2F%2Fdoi.org%2F10.1002%2Fevl3.208&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Global%20adaptation%20complicates%20the%20interpretation%20of%20genome%20scans%20for%20local%20adaptation&amp;rft.jtitle=Evolution%20Letters&amp;rft.volume=5&amp;rft.issue=1&amp;rft.aufirst=Tom%20R.&amp;rft.aulast=Booker&amp;rft.au=Tom%20R.%20Booker&amp;rft.au=Sam%20Yeaman&amp;rft.au=Michael%20C.%20Whitlock&amp;rft.date=2021&amp;rft.pages=4-15&amp;rft.spage=4&amp;rft.epage=15&amp;rft.issn=2056-3744&amp;rft.language=en"></span>
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">3.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Sasani, T.A., Ashbrook, D.G., Beichman, A.C., Lu, L., Palmer, A.A., Williams, R.W., Pritchard, J.K., and Harris, K. (2022). A natural mutator allele shapes mutation spectrum variation in mice. Nature <i>605</i>, 497–502. <a href="https://doi.org/10.1038/s41586-022-04701-5">10.1038/s41586-022-04701-5</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1038%2Fs41586-022-04701-5&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A%20natural%20mutator%20allele%20shapes%20mutation%20spectrum%20variation%20in%20mice&amp;rft.jtitle=Nature&amp;rft.volume=605&amp;rft.issue=7910&amp;rft.aufirst=Thomas%20A.&amp;rft.aulast=Sasani&amp;rft.au=Thomas%20A.%20Sasani&amp;rft.au=David%20G.%20Ashbrook&amp;rft.au=Annabel%20C.%20Beichman&amp;rft.au=Lu%20Lu&amp;rft.au=Abraham%20A.%20Palmer&amp;rft.au=Robert%20W.%20Williams&amp;rft.au=Jonathan%20K.%20Pritchard&amp;rft.au=Kelley%20Harris&amp;rft.date=2022-05&amp;rft.pages=497-502&amp;rft.spage=497&amp;rft.epage=502&amp;rft.issn=1476-4687&amp;rft.language=en"></span>
+  <div class="csl-entry" style="clear: left; ">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">4.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Shipilina, D., Pal, A., Stankowski, S., Chan, Y.F., and Barton, N.H. (2023). On the origin and structure of haplotype blocks. Molecular Ecology <i>32</i>, 1441–1457. <a href="https://doi.org/10.1111/mec.16793">10.1111/mec.16793</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1111%2Fmec.16793&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=On%20the%20origin%20and%20structure%20of%20haplotype%20blocks&amp;rft.jtitle=Molecular%20Ecology&amp;rft.volume=32&amp;rft.issue=6&amp;rft.aufirst=Daria&amp;rft.aulast=Shipilina&amp;rft.au=Daria%20Shipilina&amp;rft.au=Arka%20Pal&amp;rft.au=Sean%20Stankowski&amp;rft.au=Yingguang%20Frank%20Chan&amp;rft.au=Nicholas%20H.%20Barton&amp;rft.date=2023&amp;rft.pages=1441-1457&amp;rft.spage=1441&amp;rft.epage=1457&amp;rft.issn=1365-294X&amp;rft.language=en"></span>
+</div></body>
+</html>
+</div>
+<div id="behaviour-and-brain" class="section level3">
+<h3><u>Behaviour and brain</u></h3>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 1.35; ">
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">1.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Gardner, T.J., Naef, F., and Nottebohm, F. (2005). Freedom and Rules: The Acquisition and Reprogramming of a Bird’s Learned Song. Science <i>308</i>, 1046–1049. <a href="https://doi.org/10.1126/science.1108214">10.1126/science.1108214</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1126%2Fscience.1108214&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Freedom%20and%20Rules%3A%20The%20Acquisition%20and%20Reprogramming%20of%20a%20Bird's%20Learned%20Song&amp;rft.jtitle=Science&amp;rft.volume=308&amp;rft.issue=5724&amp;rft.aufirst=Timothy%20J.&amp;rft.aulast=Gardner&amp;rft.au=Timothy%20J.%20Gardner&amp;rft.au=Felix%20Naef&amp;rft.au=Fernando%20Nottebohm&amp;rft.date=2005-05-13&amp;rft.pages=1046-1049&amp;rft.spage=1046&amp;rft.epage=1049"></span>
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">2.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Tanaka, R., Higuchi, T., Kohatsu, S., Sato, K., and Yamamoto, D. (2017). Optogenetic Activation of the fruitless-Labeled Circuitry in Drosophila subobscura Males Induces Mating Motor Acts. J. Neurosci. <i>37</i>, 11662–11674. <a href="https://doi.org/10.1523/JNEUROSCI.1943-17.2017">10.1523/JNEUROSCI.1943-17.2017</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1523%2FJNEUROSCI.1943-17.2017&amp;rft_id=info%3Apmid%2F29109241&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Optogenetic%20Activation%20of%20the%20fruitless-Labeled%20Circuitry%20in%20Drosophila%20subobscura%20Males%20Induces%20Mating%20Motor%20Acts&amp;rft.jtitle=Journal%20of%20Neuroscience&amp;rft.stitle=J.%20Neurosci.&amp;rft.volume=37&amp;rft.issue=48&amp;rft.aufirst=Ryoya&amp;rft.aulast=Tanaka&amp;rft.au=Ryoya%20Tanaka&amp;rft.au=Tomohiro%20Higuchi&amp;rft.au=Soh%20Kohatsu&amp;rft.au=Kosei%20Sato&amp;rft.au=Daisuke%20Yamamoto&amp;rft.date=2017-11-29&amp;rft.pages=11662-11674&amp;rft.spage=11662&amp;rft.epage=11674&amp;rft.issn=0270-6474%2C%201529-2401&amp;rft.language=en"></span>
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">3.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Barkan, C.L., Kelley, D.B., and Zornik, E. (2018). Premotor neuron divergence reflects vocal evolution. The Journal of Neuroscience <i>38</i>, 0089–18. <a href="https://doi.org/10.1523/JNEUROSCI.0089-18.2018">10.1523/JNEUROSCI.0089-18.2018</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1523%2FJNEUROSCI.0089-18.2018&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Premotor%20neuron%20divergence%20reflects%20vocal%20evolution&amp;rft.jtitle=The%20Journal%20of%20Neuroscience&amp;rft.volume=38&amp;rft.issue=23&amp;rft.aufirst=Charlotte%20L.&amp;rft.aulast=Barkan&amp;rft.au=Charlotte%20L.%20Barkan&amp;rft.au=Darcy%20B.%20Kelley&amp;rft.au=Erik%20Zornik&amp;rft.date=2018&amp;rft.pages=0089%E2%80%9318&amp;rft.spage=0089&amp;rft.epage=18&amp;rft.issn=0270-6474"></span>
+  <div class="csl-entry" style="clear: left; ">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">4.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Coleman, M.J., Day, N.F., Rivera-Parra, P., and Fortune, E.S. (2021). Neurophysiological coordination of duet singing. PNAS <i>118</i>. <a href="https://doi.org/10.1073/pnas.2018188118">10.1073/pnas.2018188118</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1073%2Fpnas.2018188118&amp;rft_id=info%3Apmid%2F34074755&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Neurophysiological%20coordination%20of%20duet%20singing&amp;rft.jtitle=Proceedings%20of%20the%20National%20Academy%20of%20Sciences&amp;rft.stitle=PNAS&amp;rft.volume=118&amp;rft.issue=23&amp;rft.aufirst=Melissa%20J.&amp;rft.aulast=Coleman&amp;rft.au=Melissa%20J.%20Coleman&amp;rft.au=Nancy%20F.%20Day&amp;rft.au=Pamela%20Rivera-Parra&amp;rft.au=Eric%20S.%20Fortune&amp;rft.date=2021-06-08&amp;rft.issn=0027-8424%2C%201091-6490&amp;rft.language=en"></span>
+</div></body>
+</html>
+</div>
+<div id="complex-traits" class="section level3">
+<h3><u>Complex traits</u></h3>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 1.35; ">
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">1.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Berthold, P. (1991). Genetic control of migratory behaviour in birds. Trends in Ecology and Evolution <i>6</i>, 254–257. <a href="https://doi.org/10.1016/0169-5347(91)90072-6">10.1016/0169-5347(91)90072-6</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1016%2F0169-5347(91)90072-6&amp;rft_id=info%3Apmid%2F21232472&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Genetic%20control%20of%20migratory%20behaviour%20in%20birds&amp;rft.jtitle=Trends%20in%20Ecology%20and%20Evolution&amp;rft.volume=6&amp;rft.issue=8&amp;rft.aufirst=Peter&amp;rft.aulast=Berthold&amp;rft.au=Peter%20Berthold&amp;rft.date=1991&amp;rft.pages=254%E2%80%93257&amp;rft.spage=254&amp;rft.epage=257&amp;rft.issn=01695347"></span>
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">2.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Frankel, N.S., Erezyilmaz, D.F., McGregor, A.P., Wang, S., Payre, F., and Stern, D.L. (2011). Morphological evolution caused by many subtle-effect substitutions in regulatory DNA. Nature <i>474</i>, 598–603. <a href="https://doi.org/10.1038/nature10200">10.1038/nature10200</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1038%2Fnature10200&amp;rft_id=info%3Apmid%2F21720363&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Morphological%20evolution%20caused%20by%20many%20subtle-effect%20substitutions%20in%20regulatory%20DNA&amp;rft.jtitle=Nature&amp;rft.volume=474&amp;rft.issue=7353&amp;rft.aufirst=Nicol%C3%A3%20S.&amp;rft.aulast=Frankel&amp;rft.au=Nicol%C3%A3%20S.%20Frankel&amp;rft.au=Deniz%20F.%20Erezyilmaz&amp;rft.au=Alistair%20P.%20McGregor&amp;rft.au=Shu%20Wang&amp;rft.au=Francois%20Payre&amp;rft.au=David%20L.%20Stern&amp;rft.date=2011&amp;rft.pages=598%E2%80%93603&amp;rft.spage=598&amp;rft.epage=603&amp;rft.issn=00280836"></span>
+  <div class="csl-entry" style="clear: left; ">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">3.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Osterwalder, M., Barozzi, I., Tissiéres, V., Fukuda-Yuzawa, Y., Mannion, B.J., Afzal, S.Y., Lee, E.A., Zhu, Y., Plajzer-Frick, I., Pickle, C.S., et al. (2018). Enhancer redundancy provides phenotypic robustness in mammalian development. Nature <i>554</i>, 239–243. <a href="https://doi.org/10.1038/nature25461">10.1038/nature25461</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1038%2Fnature25461&amp;rft_id=info%3Apmid%2F29420474&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Enhancer%20redundancy%20provides%20phenotypic%20robustness%20in%20mammalian%20development&amp;rft.jtitle=Nature&amp;rft.volume=554&amp;rft.issue=7691&amp;rft.aufirst=Marco&amp;rft.aulast=Osterwalder&amp;rft.au=Marco%20Osterwalder&amp;rft.au=Iros%20Barozzi&amp;rft.au=Virginie%20Tissi%C3%A9res&amp;rft.au=Yoko%20Fukuda-Yuzawa&amp;rft.au=Brandon%20J.%20Mannion&amp;rft.au=Sarah%20Y.%20Afzal&amp;rft.au=Elizabeth%20A.%20Lee&amp;rft.au=Yiwen%20Zhu&amp;rft.au=Ingrid%20Plajzer-Frick&amp;rft.au=Catherine%20S.%20Pickle&amp;rft.au=Momoe%20Kato&amp;rft.au=Tyler%20H.%20Garvin&amp;rft.au=Quan%20T.%20Pham&amp;rft.au=Anne%20N.%20Harrington&amp;rft.au=Jennifer%20A.%20Akiyama&amp;rft.au=Veena%20Afzal&amp;rft.au=Javier%20Lopez-Rios&amp;rft.au=Diane%20E.%20Dickel&amp;rft.au=Axel%20Visel&amp;rft.au=Len%20A.%20Pennacchio&amp;rft.date=2018&amp;rft.pages=239%E2%80%93243&amp;rft.spage=239&amp;rft.epage=243&amp;rft.issn=14764687"></span>
+</div></body>
+</html>
+</div>
+<div
+id="phenotypic-plasticity-cryptic-variation-and-evolutionary-novelty"
+class="section level3">
+<h3><u>Phenotypic plasticity, cryptic variation, and evolutionary
+novelty</u></h3>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 1.35; ">
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">1.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Waddington, C.H. (1953). Genetic assimilation of an acquired character. Evolution <i>7</i>, 118–126. <a href="https://doi.org/10.2307/2405747">10.2307/2405747</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.2307%2F2405747&amp;rft_id=info%3Apmid%2F2405747&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Genetic%20assimilation%20of%20an%20acquired%20character&amp;rft.jtitle=Evolution&amp;rft.volume=7&amp;rft.issue=2&amp;rft.aufirst=C%20H&amp;rft.aulast=Waddington&amp;rft.au=C%20H%20Waddington&amp;rft.date=1953&amp;rft.pages=118%E2%80%93126&amp;rft.spage=118&amp;rft.epage=126&amp;rft.issn=00143820"></span>
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">2.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Mery, F., and Kawecki, T.J. (2004). The Effect of Learning on Experimental Evolution of Resource Preference in Drosophila Melanogaster. Evolution <i>58</i>, 757. <a href="https://doi.org/10.1554/03-540">10.1554/03-540</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1554%2F03-540&amp;rft_id=info%3Apmid%2F15154552&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=The%20Effect%20of%20Learning%20on%20Experimental%20Evolution%20of%20Resource%20Preference%20in%20Drosophila%20Melanogaster&amp;rft.jtitle=Evolution&amp;rft.volume=58&amp;rft.issue=4&amp;rft.aufirst=Frederic&amp;rft.aulast=Mery&amp;rft.au=Frederic%20Mery&amp;rft.au=Tadeusz%20J.%20Kawecki&amp;rft.date=2004&amp;rft.pages=757&amp;rft.issn=0014-3820"></span>
+  <div class="csl-entry" style="clear: left; margin-bottom: 1em;">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">3.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Suzuki, Yuichiro., and Nijhout, H.F. (2006). Evolution of a Polyphenism by Genetic Accommodation. Science <i>311</i>, 650–652. <a href="https://doi.org/10.1126/science.1118888">10.1126/science.1118888</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1126%2Fscience.1118888&amp;rft_id=info%3Apmid%2F16456077&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Evolution%20of%20a%20Polyphenism%20by%20Genetic%20Accommodation&amp;rft.jtitle=Science&amp;rft.volume=311&amp;rft.issue=5761&amp;rft.aufirst=Yuichiro.&amp;rft.aulast=Suzuki&amp;rft.au=Yuichiro.%20Suzuki&amp;rft.au=H%20Frederik%20Nijhout&amp;rft.date=2006&amp;rft.pages=650%E2%80%93652&amp;rft.spage=650&amp;rft.epage=652&amp;rft.issn=0036-8075"></span>
+  <div class="csl-entry" style="clear: left; ">
+    <div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 1em;">4.</div><div class="csl-right-inline" style="margin: 0 .4em 0 1.5em;">Zheng, J., Payne, J.L., and Wagner, A. (2019). Cryptic genetic variation accelerates evolution by opening access to diverse adaptive peaks. Science <i>365</i>, 347–353. <a href="https://doi.org/10.1126/science.aax1837">10.1126/science.aax1837</a>.</div>
+  </div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1126%2Fscience.aax1837&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Cryptic%20genetic%20variation%20accelerates%20evolution%20by%20opening%20access%20to%20diverse%20adaptive%20peaks&amp;rft.jtitle=Science&amp;rft.volume=365&amp;rft.issue=6451&amp;rft.aufirst=Jia&amp;rft.aulast=Zheng&amp;rft.au=Jia%20Zheng&amp;rft.au=Joshua%20L.%20Payne&amp;rft.au=Andreas%20Wagner&amp;rft.date=2019-07-26&amp;rft.pages=347-353&amp;rft.spage=347&amp;rft.epage=353"></span>
+</div></body>
+</html>
+</div>
+</div>
+<div id="favourite-books" class="section level2">
+<h2>Favourite books</h2>
+<p><a
+href="https://bookmeter.com/users/336463/bookcases/11926459">bookmeter</a></p>
+</div>
+<div id="favourite-music" class="section level2">
+<h2>Favourite music</h2>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5y0B5zgMwAB0TUGKKoHpKH?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2TtI5iTMXqW88tzYL4rpUm?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2uH0rRRWZsHC1DR6MlI5BS?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4ATsr7uNKgh21HOtXHArcN?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0IHwXjezdnK2hg3yB65WWV?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2dEaYRAxiWnjDMjsVOK2re?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+</div>
+<div id="podcast-in-japanese" class="section level2">
+<h2>Podcast (in Japanese)</h2>
+<p>A friend of mine and I host <a
+href="https://stopcodonfm.github.io/stopcodon.fm/">a small podcast</a>.
+We introduce papers to each other in a journal club style.</p>
+</div>
+
+<footer>
+        &nbsp;
+        <hr />
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <!-- Add font awesome icons -->
+        <p style="text-align: center;">
+        <a href="mailto:ishigohoka@evolbio.mpg.de" class="fa fa-envelope"></a>
+        <a href="https://twitter.com/junishigohoka?lang=en" class="fa fa-twitter"></a>
+        <a href="https://github.com/junishigohoka/" class="fa fa-github"></a>
+        <a href="https://scholar.google.de/citations?hl=en&user=cGon-T4AAAAJ" class="ai ai-google-scholar"></a>
+        <a href="https://www.researchgate.net/profile/Jun-Ishigohoka-2" class="ai ai-researchgate"></a>
+        <a href="https://orcid.org/0000-0002-5713-9391" class="ai ai-orcid"></a>
+        <a href="https://stopcodonfm.github.io/stopcodon.fm/" class="fa fa-headphones"></a>
+        </p>
+        &nbsp;
+</footer>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
