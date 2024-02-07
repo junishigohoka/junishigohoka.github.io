@@ -1,0 +1,21 @@
+---
+title: "About me"
+
+---
+
+I am a doctoral researcher with broad interests in evolutionary biology and animal behaviour.
+
+## CV
+
+[Download PDF](cv/cv.pdf)
+
+
+<!--
+```{r out.height = "800px", out.width='1000px', echo=F}
+knitr::include_graphics("cv/cv.pdf")
+
+```
+-->
+
+
+

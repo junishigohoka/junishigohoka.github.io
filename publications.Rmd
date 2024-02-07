@@ -1,0 +1,8 @@
+---
+title: "Publications"
+---
+
+```{r, echo=F}
+library("htmltools")
+includeHTML("bib/my_papers_html_body.txt")
+```

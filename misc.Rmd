@@ -1,0 +1,84 @@
+---
+title: "Misc"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+
+---
+
+
+## Favourite papers
+
+I believe that sharing favourite papers including those outside your projects helps communicate your broad interests.
+Here I list a subset of papers which influenced the way I think.
+
+
+### <u>Population genetics</u>
+
+```{r, echo=F}
+library("htmltools")
+includeHTML("bib/popgen_html_body.txt")
+```
+
+### <u>Behaviour and brain</u>
+
+```{r, echo=F}
+library("htmltools")
+includeHTML("bib/neuro_behav_html_body.txt")
+```
+
+### <u>Complex traits</u>
+
+```{r, echo=F}
+library("htmltools")
+includeHTML("bib/gen_pheno_html_body.txt")
+```
+
+### <u>Phenotypic plasticity, cryptic variation, and evolutionary novelty</u>
+
+```{r, echo=F}
+library("htmltools")
+includeHTML("bib/evolvability_html_body.txt")
+```
+
+
+
+## Favourite books
+
+[bookmeter](https://bookmeter.com/users/336463/bookcases/11926459)
+
+
+
+
+
+
+## Favourite music
+
+
+
+
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5y0B5zgMwAB0TUGKKoHpKH?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2TtI5iTMXqW88tzYL4rpUm?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2uH0rRRWZsHC1DR6MlI5BS?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4ATsr7uNKgh21HOtXHArcN?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0IHwXjezdnK2hg3yB65WWV?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2dEaYRAxiWnjDMjsVOK2re?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+
+
+
+## Podcast (in Japanese)
+
+
+
+A friend of mine and I host [a small podcast](https://stopcodonfm.github.io/stopcodon.fm/). 
+We introduce papers to each other in a journal club style.
